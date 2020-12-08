@@ -10,7 +10,7 @@ public class LoginPage {
 		this.driver = driver;
 	}
 
-	private static final String REGISTERBUTTON_XPATH_KEY = "";
+	private static final String REGISTERBUTTON_XPATH_KEY = "My new key";
 	private static final String LOGINBUTTON_XPATH_KEY = "";
 
 	public By identifyElementById(String idLocator) {
