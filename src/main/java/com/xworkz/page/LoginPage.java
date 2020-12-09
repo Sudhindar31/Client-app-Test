@@ -1,6 +1,8 @@
 package com.xworkz.page;
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,13 +32,22 @@ public class LoginPage extends TestBase{
 	}
 	
 		//Page actions
-	// login
-	public HomePage Login(String un,String pas) {
+	// enter login credentials
+	public void EnterDetails(String un,String pas) {
+		
 		uid.sendKeys(un);
 		pwd.sendKeys(pas);
+		//loginButton.click();
+		
+	}
+	//Login 
+	public HomePage Login() {
 		loginButton.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		return new HomePage();
 	}
+	
 	public String LoginPageTitle() {
 		return driver.getTitle();
 	}

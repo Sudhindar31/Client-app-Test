@@ -37,25 +37,26 @@ public class LoginStepDefinition extends TestBase {
 				System.out.println("Login page displayed");
 				System.out.println("Page title is correct");
 			}
-	    throw new PendingException();
+	    //throw new PendingException();
 	}
 
 	@When("^a valid credentials is keyed in$")
 	public void a_valid_credentials_is_keyed_in() throws Throwable {
-	   // System.out.println("credentials are entered");
-	    throw new PendingException();
+		
+		loginPage.EnterDetails(prop.getProperty("username"), prop.getProperty("password"));
+	   // throw new PendingException();
 	}
 
 	@When("^The login button is clicked$")
 	public void the_login_button_is_clicked() throws Throwable {
-	   System.out.println("login button is clicked");
-	    throw new PendingException();
+	   loginPage.Login();
+	    //throw new PendingException();
 	}
 
 	@Then("^The Home page is displayed$")
 	public void the_Home_page_is_displayed() throws Throwable {
 	    System.out.println("Home is displayed");
-	    throw new PendingException();
+	   // throw new PendingException();
 	}
 	
 }
