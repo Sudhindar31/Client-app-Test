@@ -42,7 +42,7 @@ public class LoginStepDefinition extends TestBase {
 
 	@When("^a valid credentials is keyed in$")
 	public void a_valid_credentials_is_keyed_in() throws Throwable {
-	    System.out.println("credentials are entered");
+	   // System.out.println("credentials are entered");
 	    throw new PendingException();
 	}
 
