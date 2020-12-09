@@ -29,6 +29,16 @@ public class LoginPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	//Login action
+		//Page actions
+	// login
+	public HomePage Login(String un,String pas) {
+		uid.sendKeys(un);
+		pwd.sendKeys(pas);
+		loginButton.click();
+		return new HomePage();
+	}
+	public String LoginPageTitle() {
+		return driver.getTitle();
+	}
 	
 }

@@ -19,7 +19,7 @@ public class TestBase {
 		prop=new Properties();
 		
 		try {
-			fis = new FileInputStream(System.getProperty("usr.dir")+"/src/main/java"+"/com/xworkz/config/config.properties");
+			fis = new FileInputStream(System.getProperty("user.dir")+"/src/main/java"+"/com/xworkz/config/config.properties");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,6 +35,7 @@ public class TestBase {
 	public static void initialization() {
 		String browserName=prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("chrome")) {
+			//System.out.println(prop.getProperty("chromeLocation"));
 			System.setProperty("webdriver.chrome.driver",prop.getProperty("chromeLocation"));
 			driver=new ChromeDriver();
 		}
