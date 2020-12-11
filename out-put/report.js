@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 9460855700,
+  "duration": 9243665000,
   "status": "passed"
 });
 formatter.scenario({
@@ -42,36 +42,36 @@ formatter.match({
   "location": "LoginStepDefinition.the_login_page_is_displayed()"
 });
 formatter.result({
-  "duration": 385810000,
+  "duration": 131781100,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.a_valid_credentials_is_keyed_in()"
 });
 formatter.result({
-  "duration": 431899400,
+  "duration": 270947700,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.the_login_button_is_clicked()"
 });
 formatter.result({
-  "duration": 2215234200,
+  "duration": 27614197000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.the_Home_page_is_displayed()"
 });
 formatter.result({
-  "duration": 115665200,
+  "duration": 494782100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 158217900,
+  "duration": 52404600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8118580200,
+  "duration": 7670575700,
   "status": "passed"
 });
 formatter.scenario({
@@ -106,32 +106,32 @@ formatter.match({
   "location": "LoginStepDefinition.the_login_page_is_displayed()"
 });
 formatter.result({
-  "duration": 14131600,
+  "duration": 6282900,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.an_invalid_credentials_are_keyed_in()"
 });
 formatter.result({
-  "duration": 353438200,
+  "duration": 166259400,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.the_login_button_is_clicked()"
 });
 formatter.result({
-  "duration": 60222039700,
+  "duration": 60120048600,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.the_Home_page_is_not_displayed()"
 });
 formatter.result({
-  "duration": 72850706700,
+  "duration": 72823400900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 148602100,
+  "duration": 51786000,
   "status": "passed"
 });
 });

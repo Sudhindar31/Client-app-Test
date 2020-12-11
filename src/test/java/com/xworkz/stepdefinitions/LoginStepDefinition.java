@@ -3,6 +3,7 @@ package com.xworkz.stepdefinitions;
 import com.xworkz.base.TestBase;
 import com.xworkz.page.HomePage;
 import com.xworkz.page.LoginPage;
+import com.xworkz.utils.TestUtil;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
@@ -15,6 +16,7 @@ import cucumber.api.java.en.When;
 public class LoginStepDefinition extends TestBase {
 	LoginPage loginPage;
 	HomePage homePage;
+	TestUtil util=new TestUtil();
 	
 	public LoginStepDefinition() {
 		
@@ -67,6 +69,7 @@ public class LoginStepDefinition extends TestBase {
 		System.out.println("Home is displayed");
 		else
 			System.out.println("Home is not displayed");
+		    util.screenShot();
 	  
 	}
 	
