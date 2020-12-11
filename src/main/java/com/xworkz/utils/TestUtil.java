@@ -12,11 +12,14 @@ import com.xworkz.base.TestBase;
 
 public class TestUtil extends TestBase {
 
-	public void screenShot() throws IOException {
-		Date currentDate=new Date();
-		String fileName=currentDate.toString().replace(" ", "-").replace(":", "-");
-		File screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir")+"//screnshots//"+fileName+".png"));
+	public void screenShot(String folderName, String testName) throws IOException {
+		String folderName_local = folderName;
+		String testName_local = testName;
+		Date currentDate = new Date();
+		String fileName = currentDate.toString().replace(" ", "-").replace(":", "-");
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File(
+				System.getProperty("user.dir") + "//" + folderName_local + "//" + testName_local + fileName + ".png"));
 	}
-	
+
 }
