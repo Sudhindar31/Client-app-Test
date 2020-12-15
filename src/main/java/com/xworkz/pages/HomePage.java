@@ -1,4 +1,4 @@
-package com.xworkz.page;
+package com.xworkz.pages;
 
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;

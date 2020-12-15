@@ -3,14 +3,12 @@ package com.xworkz.stepdefinitions;
 import java.io.IOException;
 
 import com.xworkz.base.TestBase;
-import com.xworkz.page.HomePage;
-import com.xworkz.page.LoginPage;
+import com.xworkz.pages.HomePage;
+import com.xworkz.pages.LoginPage;
 import com.xworkz.utils.TestUtil;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,15 +16,15 @@ import cucumber.api.java.en.When;
 public class LoginStepDefinition extends TestBase {
 	LoginPage loginPage;
 	HomePage homePage;
-	TestUtil util = new TestUtil();
+
 
 	public LoginStepDefinition() {
 
-		super();
+		//super();
 	}
 
 	@Before
-	public void setup() {
+	public void setup() throws IOException {
 		initialization();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
@@ -51,7 +49,8 @@ public class LoginStepDefinition extends TestBase {
 	@When("^a valid credentials is keyed in$")
 	public void a_valid_credentials_is_keyed_in() throws Throwable {
 
-		loginPage.EnterDetails(prop.getProperty("username"), prop.getProperty("password"));
+		//loginPage.EnterDetails(prop.getProperty("username"), prop.getProperty("password"));
+		loginPage.EnterDetails(TestUtil.readProperty("username"), TestUtil.readProperty("password"));
 		System.out.println("Valid credentials are entered");
 
 	}
@@ -68,7 +67,7 @@ public class LoginStepDefinition extends TestBase {
 			System.out.println("Home is displayed");
 		else
 			System.out.println("Home is not displayed");
-		util.screenShot("LogIn", "HomePage");
+		TestUtil.screenShot("LogIn", "HomePage");
 
 	}
 
@@ -76,7 +75,7 @@ public class LoginStepDefinition extends TestBase {
 
 	@When("^an invalid credentials are keyed in$")
 	public void an_invalid_credentials_are_keyed_in() throws Throwable {
-		loginPage.EnterDetails(prop.getProperty("username_invalid"), prop.getProperty("password_invalid"));
+		loginPage.EnterDetails(TestUtil.readProperty("username_invalid"), TestUtil.readProperty("password_invalid"));
 		System.out.println("Invalid credentials are entered");
 	}
 
@@ -89,8 +88,8 @@ public class LoginStepDefinition extends TestBase {
 
 	// Email id is blank
 	@When("^email id is blank$")
-	public void email_id_is_blank() {
-		loginPage.EnterDetails("", prop.getProperty("password"));
+	public void email_id_is_blank() throws IOException {
+		loginPage.EnterDetails("", TestUtil.readProperty("password"));
 	}
 
 	@Then("^error message for email should display$")
@@ -98,21 +97,21 @@ public class LoginStepDefinition extends TestBase {
 		String errorMessage = "*EmailId is required";
 		if (errorMessage.equals(loginPage.validateEmail())) {
 			System.out.println("Email error message displayed and validated");
-			util.screenShot("Login", "email_error_message");
+			TestUtil.screenShot("Login", "email_error_message");
 		}
 	}
 
 	// Password is blank
 	@When("^password is blank$")
-	public void password_is_blank() {
-		loginPage.EnterDetails(prop.getProperty("username"), "");
+	public void password_is_blank() throws IOException {
+		loginPage.EnterDetails(TestUtil.readProperty("username"), "");
 	}
 
 	@Then("^error message for password should display$")
 	public void error_message_for_password_should_display() throws IOException {
 		String errorMessage = "*Password is required";
 		if (errorMessage.equalsIgnoreCase(loginPage.validatePassword())) {
-			util.screenShot("Login", "passowrd_error_message");
+			TestUtil.screenShot("Login", "passowrd_error_message");
 			System.out.println("Password error message displayed and validated");
 		}
 	}

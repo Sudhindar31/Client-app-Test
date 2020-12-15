@@ -1,4 +1,4 @@
-package com.xworkz.page;
+package com.xworkz.pages;
 
 public class TicketsRaised {
 
